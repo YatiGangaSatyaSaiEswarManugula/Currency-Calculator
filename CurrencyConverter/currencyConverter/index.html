@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="page-shell">
+        <section class="hero-card">
+            <p class="eyebrow">Currency Converter</p>
+            <h1>Convert six major currencies in a browser-friendly interface.</h1>
+            <p class="subtitle">
+                This web version uses the same fixed exchange values from the original Java project
+                and gives instant results without opening Swing.
+            </p>
+        </section>
+
+        <section class="converter-card" aria-labelledby="converter-title">
+            <div class="card-header">
+                <h2 id="converter-title">Convert Amount</h2>
+                <button id="swapButton" class="ghost-button" type="button">Swap</button>
+            </div>
+
+            <form id="converterForm" class="converter-form">
+                <label class="field">
+                    <span>Amount</span>
+                    <input id="amountInput" name="amount" type="number" min="0" step="0.01" placeholder="Enter amount" required>
+                </label>
+
+                <div class="field-row">
+                    <label class="field">
+                        <span>From</span>
+                        <select id="fromCurrency" name="from"></select>
+                    </label>
+
+                    <label class="field">
+                        <span>To</span>
+                        <select id="toCurrency" name="to"></select>
+                    </label>
+                </div>
+
+                <button class="primary-button" type="submit">Convert</button>
+            </form>
+
+            <div class="result-panel" aria-live="polite">
+                <p class="result-label">Converted value</p>
+                <p id="resultValue" class="result-value">0.00</p>
+                <p id="resultMeta" class="result-meta">Enter an amount and choose currencies.</p>
+            </div>
+
+            <p id="errorMessage" class="error-message" role="alert"></p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
